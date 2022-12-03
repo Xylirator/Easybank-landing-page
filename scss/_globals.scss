@@ -20,7 +20,6 @@ body {
 
 a, a:visited, a:hover {
   text-decoration: none;
-  color: $grayishBlue;
 }
 
 
@@ -41,4 +40,31 @@ a, a:visited, a:hover {
   }
 
  
+}
+
+
+// BUTTONS
+button, .button {
+  padding: 0.875rem 2.1875rem;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(to right,  $limegreen, $brightCyan);
+  border: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 0.875rem;
+  transition: opacity 300ms ease-in-out;
+}
+
+// VISIBILITY 
+.hide-for-mobile {
+  @include breakpoint-down(medium){
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large){
+    display: none;
+  }
 }
