@@ -1,5 +1,7 @@
 .header {
-  
+  position: relative;
+  z-index: 1;
+
   // Burger menu styles
   &.open {
     .header__toggle {
@@ -31,7 +33,7 @@
     position: relative;
     background-color: $white;
     padding-top: 1.0625rem; 
-    padding-top: 1.0625rem; 
+    padding-bottom: 1.0625rem; 
   }
   
   &__toggle {
@@ -86,7 +88,7 @@
         left: 0;
         right: 0;
         bottom: -30px;
-        background: linear-gradient(to right, $limegreen, $brightCyan);
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
         opacity: 0;
         transition: opacity 300ms ease-in-out;
       }

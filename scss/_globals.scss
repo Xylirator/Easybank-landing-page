@@ -1,3 +1,4 @@
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -12,29 +13,114 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Public Sans", sans-serif;
-  font-size: $font-med;
+  font-family: 'Public Sans', sans-serif;
+  font-size: $font-small;
   font-weight: 300;
-  line-height: 1.3;
   color: $grayishBlue;
+  line-height: 1.3;
+  overflow-x: hidden;
 
+  @include breakpoint-up(large) {
+    font-size: $font-medium;
+  }
 
- &.noscroll {
-  overflow: hidden;
- }
+  &.noscroll {
+    overflow: hidden;
+  }
 }
 
-a, a:visited, a:hover {
+// Text
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.15;
+  color: $darkBlue;
+  margin-top: 0px;
+}
+
+h1 {
+  font-size: 2.31rem;
+  margin-bottom: 1.5rem;
+
+  @include breakpoint-up(large) {
+    font-size: $font-xlarge;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+
+  @include breakpoint-up(large) {
+    font-size: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+
+a,
+a:visited,
+a:hover {
   text-decoration: none;
 }
 
+// Spacing
 .container {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  max-width: 69.375rem;
+  margin: 0 auto;
+
+  &__p--all {
+    padding-top: 4.375rem;
+    padding-right: 1.5rem;
+    padding-bottom: 4.375rem;
+    padding-left: 1.5rem;
+
+    @include breakpoint-up(large) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  &__py {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+
+    @include breakpoint-up(large) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  &__px {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  &__pt {
+    padding-top: 4.375rem;
+
+    @include breakpoint-up(large) {
+      padding-top: 6rem;
+    }
+  }
+  &__pr {
+    padding-right: 1.5rem;
+  }
+  &__pb {
+    padding-bottom: 4.375rem;
+
+    @include breakpoint-up(large) {
+      padding-bottom: 6rem;
+    }
+  }
+  &__pl {
+    padding-left: 1.5rem;
+  }
 }
 
-
-/* FLEXBOX */
+// Flexbox
 .flex {
   display: flex;
 
@@ -49,37 +135,50 @@ a, a:visited, a:hover {
   &-ai-c {
     align-items: center;
   }
-
- 
 }
 
-
-// BUTTONS
-button, .button {
+// Buttons
+button,
+.button {
+  position: relative;
+  display: inline-block;
   padding: 0.875rem 2.1875rem;
+  background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+  border: 0;
   border-radius: 50px;
   cursor: pointer;
-  background: linear-gradient(to right,  $limegreen, $brightCyan);
-  border: 0;
-  color: white;
+  color: $white;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: $font-small;
   transition: opacity 300ms ease-in-out;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
-.has__fade {
-  visibility: hidden;
-}
-
-// VISIBILITY 
+// Visibility
 .hide-for-mobile {
-  @include breakpoint-down(medium){
+  @include breakpoint-down(medium) {
     display: none;
   }
 }
 
 .hide-for-desktop {
-  @include breakpoint-up(large){
+  @include breakpoint-up(large) {
     display: none;
   }
 }
