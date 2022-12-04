@@ -25,13 +25,13 @@
   </head>
   <body>
     <header class="header">
-      <div class="overlay"></div>
-      <nav class="flex flex-jc-sb flex-ai-c">
+      <div class="overlay has__fade"></div>
+      <nav class="container flex flex-jc-sb flex-ai-c">
         <a href="/" class="header__logo">
           <img src="./images/logo.svg" alt="Easybank" />
         </a>
 
-        <a href="#" class="header__menu hide-for-desktop" id="hamburger">
+        <a href="#" class="header__toggle hide-for-desktop" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
@@ -44,8 +44,18 @@
           <a href="#">Careers</a>
         </div>
 
-        <a href="#" class="button header__invite hide-for-mobile">Request Invite</a>
+        <a href="#" class="button header__invite hide-for-mobile"
+          >Request Invite</a
+        >
       </nav>
+
+      <div class="header__menu has__fade">
+        <a href="http://">Home</a>
+        <a href="http://">About</a>
+        <a href="http://">Contact</a>
+        <a href="http://">Blog</a>
+        <a href="http://">Careers</a>
+      </div>
     </header>
     Home About Contact Blog Careers Request Invite Next generation digital
     banking Take your financial life online. Your Easybank account will be a
@@ -73,9 +83,8 @@
     Support Privacy Policy Request Invite © Easybank. All Rights Reserved
 
     <div class="attribution">
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        ></a
-      > <a href="#"></a>.
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"></a>
+      <a href="#"></a>.
     </div>
 
     <script src="./app/script.js"></script>
